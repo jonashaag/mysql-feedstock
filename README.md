@@ -5,7 +5,7 @@ Home:
 
 Package license: 
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Common files for server and client libraries
 

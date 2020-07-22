@@ -7,7 +7,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '9'
+- '10'
 icu:
 - '67'
 libevent:
@@ -33,9 +33,7 @@ pin_run_as_build:
     max_pin: x.x.x
   zlib:
     max_pin: x.x
-  zstd:
-    max_pin: x.x.x
 zlib:
 - '1.2'
 zstd:
-- 1.4.4
+- '1.4'

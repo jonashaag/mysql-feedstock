@@ -18,7 +18,7 @@ EOF
 fi
 
 # TODO: do this in ctng-compilers-feedstock where `CMAKE_ARGS` is defined
-if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" && "$CMAKE_ARGS" == *CMAKE_CROSSCOMPILING_EMULATOR* ]]; then
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" && "$CMAKE_ARGS" != *CMAKE_CROSSCOMPILING_EMULATOR* ]]; then
     ARCH=$(cut -d "-" -f2 <<< $target_platform)
     if [[ "$target_platform" == "linux-$ARCH" && -f "/usr/bin/qemu-$ARCH-static" ]]; then
          CMAKE_ARGS="$CMAKE_ARGS -DCMAKE_CROSSCOMPILING_EMULATOR=/usr/bin/qemu-$ARCH-static"

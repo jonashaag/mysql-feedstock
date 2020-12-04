@@ -17,6 +17,14 @@ EOF
     chmod +x ${_rpcgen_hack_dir}/bin/{rpcgen,cpp}
 fi
 
+# TODO: do this in ctng-compilers-feedstock where `CMAKE_ARGS` is defined
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" && "$CMAKE_ARGS" == *CMAKE_CROSSCOMPILING_EMULATOR* ]]; then
+    ARCH=$(cut -d "-" -f2 <<< $target_platform)
+    if [[ "$target_platform" == "linux-$ARCH" && -f "/usr/bin/qemu-$ARCH-static" ]]; then
+         CMAKE_ARGS="$CMAKE_ARGS -DCMAKE_CROSSCOMPILING_EMULATOR=/usr/bin/qemu-$ARCH-static"
+    fi
+fi
+
 declare -a _xtra_cmake_args
 if [[ $target_platform == osx-64 ]]; then
     _xtra_cmake_args+=(-DWITH_ROUTER=OFF)

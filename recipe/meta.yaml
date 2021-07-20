@@ -21,6 +21,7 @@ source:
     - patches/0011-Add-constructor-for-ut-Location.patch
     - patches/0012-Reduce-number-of-symbols-being-exported-from-mysqld..patch
     - patches/0013-Ensure-sql_main-uses-protobuf-shared-library-correct.patch
+    - patches/0013-Include-missing-header-for-std-isdigit.patch
 
 build:
   number: 0

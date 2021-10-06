@@ -1,7 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '11.0'
 channel_sources:
-- conda-forge/label/rust_dev,conda-forge
+- conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
@@ -24,8 +24,6 @@ pin_run_as_build:
   libevent:
     max_pin: x.x.x
   lz4-c:
-    max_pin: x.x.x
-  openssl:
     max_pin: x.x.x
   zlib:
     max_pin: x.x

@@ -124,4 +124,6 @@ if [[ $target_platform == osx-arm64 ]]; then
     sed -i.bak "s,\(--plugin=protoc-gen-yplg=\)[^ ]*,\1$SRC_DIR/build.codegen/runtime_output_directory/xprotocol_plugin,g" build/build.ninja
 fi
 
+export NINJA_STATUS="[%f+%r/%t] "
+
 cmake --build build

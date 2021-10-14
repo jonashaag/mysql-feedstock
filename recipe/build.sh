@@ -9,7 +9,7 @@ if [[ "${target_platform}" == *"linux"* ]]; then
     ## We don't have a conda package for rpcgen, but it is present in the
     ## compiler sysroot on Linux. However, the value of PT_INTERP is not
     ## convenient for executing it. ('lib' instead of 'lib64')
-    _target_sysroot=$($CXX --print-sysroot)
+    _target_sysroot=$($CXX_FOR_BUILD --print-sysroot)
     _target_rpcgen_bin=${_target_sysroot}/usr/bin/rpcgen
     _target_interpreter=${_target_sysroot}/$(patchelf --print-interpreter ${_target_rpcgen_bin})
     _target_libdir=${_target_sysroot}/$(dirname ${_target_interpreter})
@@ -123,5 +123,7 @@ if [[ $target_platform == osx-arm64 ]]; then
     # Update the /path/to/xprotocol_plugin to the one built for the build platform
     sed -i.bak "s,\(--plugin=protoc-gen-yplg=\)[^ ]*,\1$SRC_DIR/build.codegen/runtime_output_directory/xprotocol_plugin,g" build/build.ninja
 fi
+
+export NINJA_STATUS="[%f+%r/%t] "
 
 cmake --build build

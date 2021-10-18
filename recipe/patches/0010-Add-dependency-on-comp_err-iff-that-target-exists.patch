@@ -1,7 +1,7 @@
-From 0b4db5b5dbd2b0dd7baa8fec02591df253f7d766 Mon Sep 17 00:00:00 2001
+From ca983c5085377f5cd94eaebb036211da03214ae2 Mon Sep 17 00:00:00 2001
 From: Nehal J Wani <nehaljw.kkd1@gmail.com>
 Date: Sat, 30 Jan 2021 19:48:42 -0500
-Subject: [PATCH 10/13] Add dependency on comp_err iff that target exists
+Subject: [PATCH 10/15] Add dependency on comp_err iff that target exists
 
 It's not built if we are cross compiling
 ---
@@ -24,5 +24,5 @@ index c04b627aa70..7fcd5b90a91 100644
  
  MYSQL_ADD_EXECUTABLE(static_thread_local_test
 -- 
-2.32.0
+2.33.1
 

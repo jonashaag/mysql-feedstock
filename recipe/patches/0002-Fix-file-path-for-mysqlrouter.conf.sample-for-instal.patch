@@ -1,7 +1,7 @@
-From 1b83c4783b7dd0267859839614f228bfcb54af8d Mon Sep 17 00:00:00 2001
+From d53718375299f720201c4a633a96dc6bcd82fe31 Mon Sep 17 00:00:00 2001
 From: Nehal J Wani <nehaljw.kkd1@gmail.com>
 Date: Sun, 21 Jun 2020 16:15:08 -0400
-Subject: [PATCH 02/13] Fix file path for mysqlrouter.conf.sample for
+Subject: [PATCH 02/15] Fix file path for mysqlrouter.conf.sample for
  installation
 
 ---
@@ -22,5 +22,5 @@ index 15f6e2e737a..073786bdb47 100644
  
  CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/mysql_router_extra.wxs.in
 -- 
-2.32.0
+2.33.1
 

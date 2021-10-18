@@ -1,7 +1,7 @@
-From cc259b8594bde2457ea50bcb5c4bb4dcaa316ab2 Mon Sep 17 00:00:00 2001
+From 5d53fab74978fb2d742808af0a78dae74d96a258 Mon Sep 17 00:00:00 2001
 From: Nehal J Wani <nehaljw.kkd1@gmail.com>
 Date: Mon, 19 Oct 2020 23:45:13 -0400
-Subject: [PATCH 08/13] Make LIBEVENT_PTHREADS conditional on
+Subject: [PATCH 08/15] Make LIBEVENT_PTHREADS conditional on
  CMAKE_USE_PTHREADS_INIT
 
 Requirement on LIBEVENT_PTHREADS was added by 2b84f0e3
@@ -26,5 +26,5 @@ index 61fd985349a..56058fe311f 100644
      IF(NOT LIBEVENT_INCLUDE_DIRECTORY STREQUAL "/usr/include")
        MESSAGE(STATUS "LIBEVENT_INCLUDE_DIRS ${LIBEVENT_INCLUDE_DIRS}")
 -- 
-2.32.0
+2.33.1
 

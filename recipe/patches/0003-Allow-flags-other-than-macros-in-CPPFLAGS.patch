@@ -1,7 +1,7 @@
-From d9c7998ac0e4b4194b7e8a2871a9eff5107a6c8f Mon Sep 17 00:00:00 2001
+From 62119590567d5c68141232465522a87984c1b7b0 Mon Sep 17 00:00:00 2001
 From: Nehal J Wani <nehaljw.kkd1@gmail.com>
 Date: Mon, 22 Jun 2020 09:53:55 -0400
-Subject: [PATCH 03/13] Allow flags other than macros in CPPFLAGS
+Subject: [PATCH 03/15] Allow flags other than macros in CPPFLAGS
 
 ---
  CMakeLists.txt | 4 +++-
@@ -23,5 +23,5 @@ index 4a4bbfa72fa..c6f755e6984 100644
  
  INCLUDE(CheckTypeSize)
 -- 
-2.32.0
+2.33.1
 

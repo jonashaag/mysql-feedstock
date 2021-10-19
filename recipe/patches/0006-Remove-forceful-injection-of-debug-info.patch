@@ -1,17 +1,17 @@
-From 843a9239ba458525fb5597ed273fb017db88518e Mon Sep 17 00:00:00 2001
+From b91f5f8c5af3eacd26f313cac6cd54ed869f1cca Mon Sep 17 00:00:00 2001
 From: Nehal J Wani <nehaljw.kkd1@gmail.com>
 Date: Thu, 23 Jul 2020 12:56:13 -0400
-Subject: [PATCH 06/15] Remove forceful injection of debug info
+Subject: [PATCH 06/14] Remove forceful injection of debug info
 
 ---
  cmake/os/Windows.cmake | 10 +++++-----
  1 file changed, 5 insertions(+), 5 deletions(-)
 
 diff --git a/cmake/os/Windows.cmake b/cmake/os/Windows.cmake
-index 6267faf2335..d39757fe699 100644
+index f37b04ff91..d8e294cb47 100644
 --- a/cmake/os/Windows.cmake
 +++ b/cmake/os/Windows.cmake
-@@ -136,9 +136,9 @@ IF(MSVC)
+@@ -133,9 +133,9 @@ IF(MSVC)
    #     Allowing inline reduces test time using the debug server by
    #     30% or so. If you do want to keep inlining off, set the
    #     cmake flag WIN_DEBUG_NO_INLINE.
@@ -24,7 +24,7 @@ index 6267faf2335..d39757fe699 100644
  
    FOREACH(flag
        CMAKE_C_FLAGS_MINSIZEREL
-@@ -150,8 +150,8 @@ IF(MSVC)
+@@ -147,8 +147,8 @@ IF(MSVC)
      IF(LINK_STATIC_RUNTIME_LIBRARIES)
        STRING(REPLACE "/MD"  "/MT" "${flag}" "${${flag}}")
      ENDIF()
@@ -36,5 +36,5 @@ index 6267faf2335..d39757fe699 100644
        STRING(REPLACE "/Ob0"  "/Ob1" "${flag}" "${${flag}}")
      ENDIF()
 -- 
-2.33.1
+2.31.1
 

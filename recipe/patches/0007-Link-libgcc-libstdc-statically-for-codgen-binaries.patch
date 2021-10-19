@@ -1,7 +1,7 @@
-From 3649c60e2d4dd73ed54a466940e9f15d23ad89fa Mon Sep 17 00:00:00 2001
+From fb2f0787bc9fba130332bb935892f7c37f0a1830 Mon Sep 17 00:00:00 2001
 From: Nehal J Wani <nehaljw.kkd1@gmail.com>
 Date: Fri, 14 Aug 2020 20:30:20 -0400
-Subject: [PATCH 07/15] Link libgcc & libstdc++ statically for codgen binaries
+Subject: [PATCH 07/14] Link libgcc & libstdc++ statically for codgen binaries
 
 Makes it easier for cross compilation
 ---
@@ -9,7 +9,7 @@ Makes it easier for cross compilation
  1 file changed, 13 insertions(+)
 
 diff --git a/sql/CMakeLists.txt b/sql/CMakeLists.txt
-index 58dbbf23ecf..e3e2409eab0 100644
+index 1ea1bad21b..bbf09755d7 100644
 --- a/sql/CMakeLists.txt
 +++ b/sql/CMakeLists.txt
 @@ -71,6 +71,10 @@ MYSQL_ADD_EXECUTABLE(gen_lex_token
@@ -23,7 +23,7 @@ index 58dbbf23ecf..e3e2409eab0 100644
  
  MY_CHECK_CXX_COMPILER_WARNING("-Wmissing-profile" HAS_MISSING_PROFILE)
  IF(HAS_MISSING_PROFILE)
-@@ -91,6 +95,11 @@ MYSQL_ADD_EXECUTABLE(gen_keyword_list
+@@ -94,6 +98,11 @@ MYSQL_ADD_EXECUTABLE(gen_keyword_list
    LINK_LIBRARIES ${ICU_LIBRARIES} ${CMAKE_DL_LIBS}
    SKIP_INSTALL
    )
@@ -35,7 +35,7 @@ index 58dbbf23ecf..e3e2409eab0 100644
  
  IF(WITH_LTO OR CMAKE_COMPILER_FLAG_WITH_LTO)
    TARGET_COMPILE_OPTIONS(gen_keyword_list PRIVATE "-fno-lto")
-@@ -1234,6 +1243,10 @@ SET_SOURCE_FILES_PROPERTIES(
+@@ -1256,6 +1265,10 @@ SET_SOURCE_FILES_PROPERTIES(
  
  # Gen_lex_hash
  MYSQL_ADD_EXECUTABLE(gen_lex_hash gen_lex_hash.cc SKIP_INSTALL)
@@ -47,5 +47,5 @@ index 58dbbf23ecf..e3e2409eab0 100644
  IF(HAS_MISSING_PROFILE)
    ADD_COMPILE_FLAGS(gen_lex_hash.cc COMPILE_FLAGS ${HAS_MISSING_PROFILE})
 -- 
-2.33.1
+2.31.1
 

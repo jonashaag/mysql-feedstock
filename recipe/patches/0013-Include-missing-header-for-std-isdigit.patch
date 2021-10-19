@@ -1,0 +1,30 @@
+From c582c618b6cb07f30e5a63a745eaeb4ef1f5f1d3 Mon Sep 17 00:00:00 2001
+From: Nehal J Wani <nehaljw.kkd1@gmail.com>
+Date: Wed, 21 Jul 2021 00:55:54 +0530
+Subject: [PATCH 13/14] Include missing header for std::isdigit()
+
+This patch resolves the following error with the MSVC compiler:
+
+\\sql\server_component\clone_protocol_service.cc(248):
+   error C2039: 'isdigit': is not a member of 'std'
+\\path\to\include\cstdarg(17): note: see declaration of 'std'
+---
+ sql/server_component/clone_protocol_service.cc | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/sql/server_component/clone_protocol_service.cc b/sql/server_component/clone_protocol_service.cc
+index d7f3a1fe3a..f7d061b4f5 100644
+--- a/sql/server_component/clone_protocol_service.cc
++++ b/sql/server_component/clone_protocol_service.cc
+@@ -41,6 +41,8 @@
+ #include "sql/dd/cache/dictionary_client.h"
+ #include "sql/dd/dictionary.h"
+ 
++#include <cctype>
++
+ /** The minimum idle timeout in seconds. It is kept at 8 hours which is also
+ the Server default. Currently recipient sends ACK during state transition.
+ In future we could have better time controlled ACK. */
+-- 
+2.31.1
+

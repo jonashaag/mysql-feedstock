@@ -92,7 +92,7 @@ if [[ $target_platform == osx-arm64 ]] && [[ $CONDA_BUILD_CROSS_COMPILATION == 1
 fi
 
 cmake -S$SRC_DIR -Bbuild -GNinja \
-  -DCMAKE_CXX_STANDARD=14 \
+  -DCMAKE_CXX_STANDARD=17 \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_PREFIX_PATH="${_rpcgen_hack_dir};$PREFIX" \
   -DCOMPILATION_COMMENT=conda-forge \

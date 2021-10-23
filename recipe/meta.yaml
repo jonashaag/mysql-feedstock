@@ -22,6 +22,7 @@ source:
     - patches/0012-Ensure-sql_main-uses-protobuf-shared-library-correct.patch
     - patches/0013-Include-missing-header-for-std-isdigit.patch
     - patches/0014-Add-bitset-typecasts-to-make-MSVC-v19.20-happy.patch
+    - patches/0015-Print-number-of-lines-in-the-file-generated-by-creat.patch
 
 build:
   number: 0

@@ -9,3 +9,8 @@ c_compiler_version:    # [ppc64le]
   - '8'                # [ppc64le]
 cxx_compiler_version:  # [ppc64le]
   - '8'                # [ppc64le]
+# https://github.com/conda-forge/ctng-compilers-feedstock/issues/78
+c_compiler_version:    # [aarch64]
+  - '9.3.0'            # [aarch64]
+cxx_compiler_version:  # [aarch64]
+  - '9.3.0'            # [aarch64]

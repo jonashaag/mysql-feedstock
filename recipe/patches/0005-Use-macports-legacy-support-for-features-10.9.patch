@@ -1,25 +1,25 @@
-From 348c000fc31669475c467f5cca2ecf8a392afee3 Mon Sep 17 00:00:00 2001
+From 49ff252d9e86a95928ab0619c186fa198fb0c00b Mon Sep 17 00:00:00 2001
 From: Nehal J Wani <nehaljw.kkd1@gmail.com>
 Date: Tue, 21 Jul 2020 22:56:50 -0400
-Subject: [PATCH 05/14] Use macports-legacy-support for features >10.9
+Subject: [PATCH 05/15] Use macports-legacy-support for features >10.9
 
 ---
  .../libmysqlgcs/CMakeLists.txt                |     8 +
  .../libmysqlgcs/CMakeLists.txt.orig           |   232 +
  .../src/bindings/xcom/xcom/task.cc            |     6 +-
  .../src/bindings/xcom/xcom/task.cc.orig       |  1478 +
- storage/innobase/CMakeLists.txt               |     7 +
+ storage/innobase/CMakeLists.txt               |     9 +-
  storage/innobase/CMakeLists.txt.orig          |   302 +
  storage/innobase/handler/ha_innodb.cc         |     5 +
  storage/innobase/handler/ha_innodb.cc.orig    | 23876 ++++++++++++++++
- 8 files changed, 25913 insertions(+), 1 deletion(-)
+ 8 files changed, 25914 insertions(+), 2 deletions(-)
  create mode 100644 plugin/group_replication/libmysqlgcs/CMakeLists.txt.orig
  create mode 100644 plugin/group_replication/libmysqlgcs/src/bindings/xcom/xcom/task.cc.orig
  create mode 100644 storage/innobase/CMakeLists.txt.orig
  create mode 100644 storage/innobase/handler/ha_innodb.cc.orig
 
 diff --git a/plugin/group_replication/libmysqlgcs/CMakeLists.txt b/plugin/group_replication/libmysqlgcs/CMakeLists.txt
-index 40c30934bc..aea059360e 100644
+index 40c30934bce..aea059360ec 100644
 --- a/plugin/group_replication/libmysqlgcs/CMakeLists.txt
 +++ b/plugin/group_replication/libmysqlgcs/CMakeLists.txt
 @@ -230,3 +230,11 @@ ENDIF()
@@ -36,7 +36,7 @@ index 40c30934bc..aea059360e 100644
 +ENDIF()
 diff --git a/plugin/group_replication/libmysqlgcs/CMakeLists.txt.orig b/plugin/group_replication/libmysqlgcs/CMakeLists.txt.orig
 new file mode 100644
-index 0000000000..40c30934bc
+index 00000000000..40c30934bce
 --- /dev/null
 +++ b/plugin/group_replication/libmysqlgcs/CMakeLists.txt.orig
 @@ -0,0 +1,232 @@
@@ -273,7 +273,7 @@ index 0000000000..40c30934bc
 +# convenience target
 +ADD_CUSTOM_TARGET(libmysqlgcs DEPENDS mysqlgcs)
 diff --git a/plugin/group_replication/libmysqlgcs/src/bindings/xcom/xcom/task.cc b/plugin/group_replication/libmysqlgcs/src/bindings/xcom/xcom/task.cc
-index 0f0b8d661f..8a6e38ce3f 100644
+index 0f0b8d661ff..8a6e38ce3fd 100644
 --- a/plugin/group_replication/libmysqlgcs/src/bindings/xcom/xcom/task.cc
 +++ b/plugin/group_replication/libmysqlgcs/src/bindings/xcom/xcom/task.cc
 @@ -70,7 +70,11 @@
@@ -291,7 +291,7 @@ index 0f0b8d661f..8a6e38ce3f 100644
  
 diff --git a/plugin/group_replication/libmysqlgcs/src/bindings/xcom/xcom/task.cc.orig b/plugin/group_replication/libmysqlgcs/src/bindings/xcom/xcom/task.cc.orig
 new file mode 100644
-index 0000000000..0f0b8d661f
+index 00000000000..0f0b8d661ff
 --- /dev/null
 +++ b/plugin/group_replication/libmysqlgcs/src/bindings/xcom/xcom/task.cc.orig
 @@ -0,0 +1,1478 @@
@@ -1774,11 +1774,19 @@ index 0000000000..0f0b8d661f
 +
 +#endif
 diff --git a/storage/innobase/CMakeLists.txt b/storage/innobase/CMakeLists.txt
-index f1ca0de7ee..b2f314d8e4 100644
+index f1ca0de7ee3..f8d21babfc3 100644
 --- a/storage/innobase/CMakeLists.txt
 +++ b/storage/innobase/CMakeLists.txt
-@@ -266,6 +266,13 @@ IF(HAS_MISSING_PROFILE)
+@@ -266,7 +266,6 @@ IF(HAS_MISSING_PROFILE)
    TARGET_COMPILE_OPTIONS(innodb_zipdecompress PRIVATE ${HAS_MISSING_PROFILE})
+ ENDIF()
+ 
+-
+ UNSET(NUMA_LIBRARY)
+ IF(HAVE_LIBNUMA)
+   SET(NUMA_LIBRARY "numa")
+@@ -289,6 +288,14 @@ IF(SOLARIS AND MY_COMPILER_IS_GNU)
+     )
  ENDIF()
  
 +IF(APPLE)
@@ -1788,12 +1796,13 @@ index f1ca0de7ee..b2f314d8e4 100644
 +  TARGET_LINK_LIBRARIES(innobase ${MacportsLegacySupport_LIBRARY})
 +  TARGET_INCLUDE_DIRECTORIES(innobase PRIVATE ${MacportsLegacySupport_INCLUDE_DIR})
 +ENDIF()
- 
- UNSET(NUMA_LIBRARY)
- IF(HAVE_LIBNUMA)
++
+ # Generated code with logical-op warnings
+ MY_CHECK_CXX_COMPILER_WARNING("-Wlogical-op" HAS_WARN_FLAG)
+ IF(HAS_WARN_FLAG)
 diff --git a/storage/innobase/CMakeLists.txt.orig b/storage/innobase/CMakeLists.txt.orig
 new file mode 100644
-index 0000000000..f1ca0de7ee
+index 00000000000..f1ca0de7ee3
 --- /dev/null
 +++ b/storage/innobase/CMakeLists.txt.orig
 @@ -0,0 +1,302 @@
@@ -2100,7 +2109,7 @@ index 0000000000..f1ca0de7ee
 +    COMPILE_FLAGS "${HAS_WARN_FLAG}")
 +ENDIF()
 diff --git a/storage/innobase/handler/ha_innodb.cc b/storage/innobase/handler/ha_innodb.cc
-index 53f9c0d9c9..6a0d027fc3 100644
+index 53f9c0d9c9a..6a0d027fc32 100644
 --- a/storage/innobase/handler/ha_innodb.cc
 +++ b/storage/innobase/handler/ha_innodb.cc
 @@ -198,6 +198,11 @@ this program; if not, write to the Free Software Foundation, Inc.,
@@ -2117,7 +2126,7 @@ index 53f9c0d9c9..6a0d027fc3 100644
  #ifndef UNIV_HOTBACKUP
 diff --git a/storage/innobase/handler/ha_innodb.cc.orig b/storage/innobase/handler/ha_innodb.cc.orig
 new file mode 100644
-index 0000000000..53f9c0d9c9
+index 00000000000..53f9c0d9c9a
 --- /dev/null
 +++ b/storage/innobase/handler/ha_innodb.cc.orig
 @@ -0,0 +1,23876 @@
@@ -25998,5 +26007,5 @@ index 0000000000..53f9c0d9c9
 +}
 +#endif /* !UNIV_HOTBACKUP */
 -- 
-2.31.1
+2.33.1
 

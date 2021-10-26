@@ -9,7 +9,7 @@ if [[ "${target_platform}" == *"linux"* ]]; then
     ## We don't have a conda package for rpcgen, but it is present in the
     ## compiler sysroot on Linux. However, the value of PT_INTERP is not
     ## convenient for executing it. ('lib' instead of 'lib64')
-    _target_sysroot=$($CXX_FOR_BUILD --print-sysroot)
+    _target_sysroot=$(${CXX_FOR_BUILD:-$CC} --print-sysroot)
     _target_rpcgen_bin=${_target_sysroot}/usr/bin/rpcgen
     _target_interpreter=${_target_sysroot}/$(patchelf --print-interpreter ${_target_rpcgen_bin})
     _target_libdir=${_target_sysroot}/$(dirname ${_target_interpreter})
@@ -92,7 +92,7 @@ if [[ $target_platform == osx-arm64 ]] && [[ $CONDA_BUILD_CROSS_COMPILATION == 1
 fi
 
 cmake -S$SRC_DIR -Bbuild -GNinja \
-  -DCMAKE_CXX_STANDARD=14 \
+  -DCMAKE_CXX_STANDARD=17 \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_PREFIX_PATH="${_rpcgen_hack_dir};$PREFIX" \
   -DCOMPILATION_COMMENT=conda-forge \

@@ -12,7 +12,7 @@ if [[ "${target_platform}" == *"linux"* ]]; then
     _target_sysroot=$(${CXX_FOR_BUILD:-$CC} --print-sysroot)
     _target_rpcgen_bin=${_target_sysroot}/usr/bin/rpcgen
     _target_interpreter=${_target_sysroot}/$(patchelf --print-interpreter ${_target_rpcgen_bin})
-    _target_libdir=${_target_sysroot}/$(dirname ${_target_interpreter})
+    _target_libdir=$(dirname ${_target_interpreter})
 
     ## Generate a wrapper which will use the interpreter provided in the
     ## compiler sysroot to exec rpcgen and also provide the appropriate

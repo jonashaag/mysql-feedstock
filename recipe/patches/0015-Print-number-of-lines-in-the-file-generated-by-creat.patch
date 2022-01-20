@@ -12,14 +12,14 @@ diff --git a/sql/CMakeLists.txt b/sql/CMakeLists.txt
 index 2bae2053bb7..135552c5c66 100644
 --- a/sql/CMakeLists.txt
 +++ b/sql/CMakeLists.txt
-@@ -1154,7 +1154,8 @@ IF(MSVC)
+@@ -1162,7 +1162,8 @@
      DEPENDS create_def binlog binlogevents_static mysys mytime rpl slave sql_main strings vio
    )
-   ADD_CUSTOM_TARGET(GenMysqldDef ALL
+   MY_ADD_CUSTOM_TARGET(GenMysqldDef ALL
 -    DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/mysqld.def)
 +    DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/mysqld.def
 +    COMMAND $ENV{windir}/System32/find.exe /v /c \"\" ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/mysqld.def)
- 
+
    ADD_DEPENDENCIES(sql_main GenError)
    ADD_DEPENDENCIES(mysqld GenMysqldDef)
 -- 

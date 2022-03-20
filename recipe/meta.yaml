@@ -139,6 +139,7 @@ outputs:
         - cmake
         - ninja
       host:
+        # 2022/03/20 hmaarrfk
         # Add openssl to ensure a unique build number fo mysql-devel
         - openssl
         - {{ pin_subpackage('mysql-libs', exact=True) }}
@@ -194,6 +195,10 @@ outputs:
       build:
         - cmake
         - ninja
+      host:
+        # 2022/03/20 hmaarrfk
+        # Add openssl to ensure a unique build number fo mysql-devel
+        - openssl
     test:
       commands:
         - test -f $PREFIX/share/mysql/english/errmsg.sys  # [unix]
@@ -250,6 +255,10 @@ outputs:
       build:
         - cmake
         - ninja
+      host:
+        # 2022/03/20 hmaarrfk
+        # Add openssl to ensure a unique build number fo mysql-devel
+        - openssl
       run:
         - {{ pin_subpackage('mysql-server', exact=True) }}
         - {{ pin_subpackage('mysql-client', exact=True) }}

@@ -138,6 +138,8 @@ outputs:
         - cmake
         - ninja
       host:
+        # Add openssl to ensure a unique build number fo mysql-devel
+        - openssl
         - {{ pin_subpackage('mysql-libs', exact=True) }}
       run:
         - {{ pin_subpackage('mysql-libs', exact=True) }}

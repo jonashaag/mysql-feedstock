@@ -27,7 +27,7 @@ source:
     - patches/0017-Add-workaround-for-a-bug-in-GCC-v9.4.0-aarch64.patch
     - patches/0019-Revert-Bug-30981914-COMPILE-WITH-FASTER-TLS-MODEL.patch
     # https://code.launchpad.net/~racb/ubuntu/+source/mysql-8.0/+git/mysql-8.0/+merge/414742
-    - patches/ssl3
+    - patches/ssl3.patch
 
 build:
   number: 2
@@ -42,7 +42,6 @@ requirements:
     - macports-legacy-support  # [target_platform == 'osx-arm64']
     - openssl                  # [target_platform == 'osx-arm64']
     - zstd                     # [target_platform == 'osx-arm64']
-    - m2-patch                 # [win]
   host:
     - cyrus-sasl               # [unix]
     - icu

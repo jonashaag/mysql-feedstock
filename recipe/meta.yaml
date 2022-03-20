@@ -136,6 +136,7 @@ outputs:
         - {{ pin_subpackage('mysql-libs', max_pin='x.x') }}
     requirements:
       build:
+        - {{ compiler('cxx') }}
         - cmake
         - ninja
       host:
@@ -193,6 +194,7 @@ outputs:
         - cmake -P %SRC_DIR%\build\share\cmake_install.cmake   # [win]
     requirements:
       build:
+        - {{ compiler('cxx') }}
         - cmake
         - ninja
       host:

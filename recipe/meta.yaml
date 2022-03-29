@@ -26,9 +26,11 @@ source:
     - patches/0016-Check-for-ARMv8-crc32-intrinsic-support-on-osx-arm64.patch
     - patches/0017-Add-workaround-for-a-bug-in-GCC-v9.4.0-aarch64.patch
     - patches/0019-Revert-Bug-30981914-COMPILE-WITH-FASTER-TLS-MODEL.patch
+    # https://code.launchpad.net/~racb/ubuntu/+source/mysql-8.0/+git/mysql-8.0/+merge/414742
+    - patches/ssl3.patch
 
 build:
-  number: 0
+  number: 2
 
 requirements:
   build:
@@ -133,9 +135,13 @@ outputs:
         - {{ pin_subpackage('mysql-libs', max_pin='x.x') }}
     requirements:
       build:
+        - {{ compiler('cxx') }}
         - cmake
         - ninja
       host:
+        # 2022/03/20 hmaarrfk
+        # Add openssl to ensure a unique build number fo mysql-devel
+        - openssl
         - {{ pin_subpackage('mysql-libs', exact=True) }}
       run:
         - {{ pin_subpackage('mysql-libs', exact=True) }}
@@ -187,8 +193,13 @@ outputs:
         - cmake -P %SRC_DIR%\build\share\cmake_install.cmake   # [win]
     requirements:
       build:
+        - {{ compiler('cxx') }}
         - cmake
         - ninja
+      host:
+        # 2022/03/20 hmaarrfk
+        # Add openssl to ensure a unique build number fo mysql-devel
+        - openssl
     test:
       commands:
         - test -f $PREFIX/share/mysql/english/errmsg.sys  # [unix]
@@ -245,6 +256,10 @@ outputs:
       build:
         - cmake
         - ninja
+      host:
+        # 2022/03/20 hmaarrfk
+        # Add openssl to ensure a unique build number fo mysql-devel
+        - openssl
       run:
         - {{ pin_subpackage('mysql-server', exact=True) }}
         - {{ pin_subpackage('mysql-client', exact=True) }}

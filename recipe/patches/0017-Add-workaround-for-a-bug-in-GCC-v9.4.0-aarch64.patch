@@ -1,7 +1,7 @@
-From 36e750fd8cd2c8eef70e1118525f23a271c1e8dc Mon Sep 17 00:00:00 2001
+From 981b766c6f3cfc8e702e7673e1a68e03db07a01c Mon Sep 17 00:00:00 2001
 From: Nehal J Wani <nehaljw.kkd1@gmail.com>
 Date: Sun, 24 Oct 2021 15:21:38 -0400
-Subject: [PATCH 17/17] Add workaround for a bug in GCC v9.4.0 (aarch64)
+Subject: [PATCH 17/19] Add workaround for a bug in GCC v9.4.0 (aarch64)
 
 xref: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=100985
 ---
@@ -27,7 +27,7 @@ index b9919d3679c..f2011ac5067 100644
  #include <asm/hwcap.h>  // HWCAP_CRC32
  #include <sys/auxv.h>   // getauxval
 diff --git a/storage/innobase/ut/crc32.cc b/storage/innobase/ut/crc32.cc
-index 73f79427895..da4e019bae2 100644
+index 1a422a80398..b6ce3eab3ee 100644
 --- a/storage/innobase/ut/crc32.cc
 +++ b/storage/innobase/ut/crc32.cc
 @@ -107,7 +107,13 @@ external tools. */

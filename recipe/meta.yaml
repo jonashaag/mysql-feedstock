@@ -1,4 +1,4 @@
-{% set version = "8.0.28" %}
+{% set version = "8.0.29" %}
 
 package:
   name: mysql-suite
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-boost-{{ version }}.tar.gz
-  sha256: 6dd0303998e70066d36905bd8fef1c01228ea182dbfbabc6c22ebacdbf8b5941
+  sha256: fd34a84c65fc7b15609d55b1f5d128c4d5543a6b95fa638569c3277c5c7bb048
   patches:
     - patches/0001-Make-installation-of-pdb-files-optional.patch
     - patches/0002-Fix-file-path-for-mysqlrouter.conf.sample-for-instal.patch
@@ -25,12 +25,12 @@ source:
     - patches/0015-Print-number-of-lines-in-the-file-generated-by-creat.patch
     - patches/0016-Check-for-ARMv8-crc32-intrinsic-support-on-osx-arm64.patch
     - patches/0017-Add-workaround-for-a-bug-in-GCC-v9.4.0-aarch64.patch
-    - patches/0019-Revert-Bug-30981914-COMPILE-WITH-FASTER-TLS-MODEL.patch
+    - patches/0018-Revert-Bug-30981914-COMPILE-WITH-FASTER-TLS-MODEL.patch
     # https://code.launchpad.net/~racb/ubuntu/+source/mysql-8.0/+git/mysql-8.0/+merge/414742
-    - patches/ssl3.patch
+    - patches/0019-Add-support-for-OpenSSL-3.0.patch
 
 build:
-  number: 4
+  number: 0
 
 requirements:
   build:

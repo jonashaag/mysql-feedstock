@@ -1,7 +1,7 @@
-From c582c618b6cb07f30e5a63a745eaeb4ef1f5f1d3 Mon Sep 17 00:00:00 2001
+From 32ac4bb257f00a0ab99c8b097cb6efd8ebee95be Mon Sep 17 00:00:00 2001
 From: Nehal J Wani <nehaljw.kkd1@gmail.com>
 Date: Wed, 21 Jul 2021 00:55:54 +0530
-Subject: [PATCH 13/14] Include missing header for std::isdigit()
+Subject: [PATCH 13/19] Include missing header for std::isdigit()
 
 This patch resolves the following error with the MSVC compiler:
 
@@ -13,7 +13,7 @@ This patch resolves the following error with the MSVC compiler:
  1 file changed, 2 insertions(+)
 
 diff --git a/sql/server_component/clone_protocol_service.cc b/sql/server_component/clone_protocol_service.cc
-index d7f3a1fe3a..f7d061b4f5 100644
+index c8466b08a04..4f5a37696f7 100644
 --- a/sql/server_component/clone_protocol_service.cc
 +++ b/sql/server_component/clone_protocol_service.cc
 @@ -41,6 +41,8 @@
@@ -26,5 +26,5 @@ index d7f3a1fe3a..f7d061b4f5 100644
  the Server default. Currently recipient sends ACK during state transition.
  In future we could have better time controlled ACK. */
 -- 
-2.31.1
+2.33.1
 

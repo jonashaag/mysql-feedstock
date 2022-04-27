@@ -1,7 +1,7 @@
-From 1adb3e43ba6cd66e6585a2a6cbd49558ed8400e5 Mon Sep 17 00:00:00 2001
+From 4e7298ebef0f40d479fbcc6589b7665a6b2a3243 Mon Sep 17 00:00:00 2001
 From: Nehal J Wani <nehaljw.kkd1@gmail.com>
 Date: Sun, 24 Oct 2021 14:20:06 -0400
-Subject: [PATCH 16/16] Check for ARMv8 crc32 intrinsic support on osx-arm64
+Subject: [PATCH 16/19] Check for ARMv8 crc32 intrinsic support on osx-arm64
  too
 
 ---

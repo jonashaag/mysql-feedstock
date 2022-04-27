@@ -1,7 +1,7 @@
-From 88cec2ea1a3e911e91725140851af47313226c02 Mon Sep 17 00:00:00 2001
+From 6bddc18e8b7afc297b705a64a5bb9a3abd786700 Mon Sep 17 00:00:00 2001
 From: Nehal J Wani <nehaljw.kkd1@gmail.com>
 Date: Thu, 22 Apr 2021 09:32:37 -0400
-Subject: [PATCH 10/14] Add constructor for ut::Location
+Subject: [PATCH 10/19] Add constructor for ut::Location
 
 This patch resolves the following error with the MSVC compiler:
 
@@ -9,11 +9,11 @@ dict0dict.h(1096): error C2440: '<function-style-cast>': cannot convert from 'in
 dict0dict.h(1203): note: No constructor could take the source type, or constructor overload resolution was ambiguous
 dict0dict.h(1203): note: This diagnostic occurred in the compiler generated function 'void dict_sys_t::for_each_table(Functor &)'
 ---
- storage/innobase/include/ut0core.h      |   1 +
+ storage/innobase/include/ut0core.h | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/storage/innobase/include/ut0ut.h b/storage/innobase/include/ut0ut.h
-index ec2cda4d11..c85fdd4008 100644
+diff --git a/storage/innobase/include/ut0core.h b/storage/innobase/include/ut0core.h
+index e887a9c52a0..fd559aca6ce 100644
 --- a/storage/innobase/include/ut0core.h
 +++ b/storage/innobase/include/ut0core.h
 @@ -30,6 +30,7 @@
@@ -25,5 +25,5 @@ index ec2cda4d11..c85fdd4008 100644
    size_t line;
    std::ostream &print(std::ostream &out) const {
 -- 
-2.31.1
+2.33.1
 

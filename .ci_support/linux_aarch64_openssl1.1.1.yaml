@@ -27,8 +27,6 @@ openssl:
 pin_run_as_build:
   libevent:
     max_pin: x.x.x
-  lz4-c:
-    max_pin: x.x.x
   zlib:
     max_pin: x.x
 target_platform:

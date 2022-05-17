@@ -30,7 +30,7 @@ source:
     - patches/0019-Add-support-for-OpenSSL-3.0.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:

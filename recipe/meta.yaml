@@ -26,8 +26,6 @@ source:
     - patches/0016-Check-for-ARMv8-crc32-intrinsic-support-on-osx-arm64.patch
     - patches/0017-Add-workaround-for-a-bug-in-GCC-v9.4.0-aarch64.patch
     - patches/0018-Revert-Bug-30981914-COMPILE-WITH-FASTER-TLS-MODEL.patch
-    # https://code.launchpad.net/~racb/ubuntu/+source/mysql-8.0/+git/mysql-8.0/+merge/414742
-    - patches/0019-Add-support-for-OpenSSL-3.0.patch
 
 build:
   number: 0

@@ -17,7 +17,7 @@ source:
     - patches/0007-Link-libgcc-libstdc-statically-for-codgen-binaries.patch
     - patches/0008-Make-LIBEVENT_PTHREADS-conditional-on-CMAKE_USE_PTHR.patch
     - patches/0009-Add-dependency-on-comp_err-iff-that-target-exists.patch
-    - patches/0010-Add-constructor-for-ut-Location.patch
+    - patches/0010-Add-constructor-s-for-ut-Location.patch
     - patches/0011-Reduce-number-of-symbols-being-exported-from-mysqld..patch
     - patches/0012-Ensure-sql_main-uses-protobuf-shared-library-correct.patch
     - patches/0013-Include-missing-header-for-std-isdigit.patch

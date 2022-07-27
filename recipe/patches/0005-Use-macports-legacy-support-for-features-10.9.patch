@@ -1,7 +1,7 @@
-From 43143b429e0553ee8e62ec8fb3c0b39dbf65e910 Mon Sep 17 00:00:00 2001
+From d111337068cb4b53ae0fdbb60509fd2c382dc642 Mon Sep 17 00:00:00 2001
 From: Nehal J Wani <nehaljw.kkd1@gmail.com>
 Date: Tue, 21 Jul 2020 22:56:50 -0400
-Subject: [PATCH 05/19] Use macports-legacy-support for features >10.9
+Subject: [PATCH 05/18] Use macports-legacy-support for features >10.9
 
 ---
  .../libmysqlgcs/CMakeLists.txt                |     8 +
@@ -273,7 +273,7 @@ index 00000000000..40c30934bce
 +# convenience target
 +ADD_CUSTOM_TARGET(libmysqlgcs DEPENDS mysqlgcs)
 diff --git a/plugin/group_replication/libmysqlgcs/src/bindings/xcom/xcom/task.cc b/plugin/group_replication/libmysqlgcs/src/bindings/xcom/xcom/task.cc
-index 5fe10879110..4dedc5f209a 100644
+index f53b14d6008..b6caed37746 100644
 --- a/plugin/group_replication/libmysqlgcs/src/bindings/xcom/xcom/task.cc
 +++ b/plugin/group_replication/libmysqlgcs/src/bindings/xcom/xcom/task.cc
 @@ -70,7 +70,11 @@
@@ -1774,10 +1774,10 @@ index 00000000000..0f0b8d661ff
 +
 +#endif
 diff --git a/storage/innobase/CMakeLists.txt b/storage/innobase/CMakeLists.txt
-index da42d92ec1e..cd066ccdcf4 100644
+index f1646123db1..99ec4990209 100644
 --- a/storage/innobase/CMakeLists.txt
 +++ b/storage/innobase/CMakeLists.txt
-@@ -297,7 +297,6 @@ IF(HAS_MISSING_PROFILE)
+@@ -307,7 +307,6 @@ IF(HAS_MISSING_PROFILE)
    TARGET_COMPILE_OPTIONS(innodb_zipdecompress PRIVATE ${HAS_MISSING_PROFILE})
  ENDIF()
  
@@ -1785,7 +1785,7 @@ index da42d92ec1e..cd066ccdcf4 100644
  UNSET(NUMA_LIBRARY)
  IF(HAVE_LIBNUMA)
    SET(NUMA_LIBRARY "numa")
-@@ -319,6 +318,14 @@ IF(SOLARIS AND MY_COMPILER_IS_GNU)
+@@ -329,6 +328,14 @@ IF(SOLARIS AND MY_COMPILER_IS_GNU)
      )
  ENDIF()
  
@@ -2109,10 +2109,10 @@ index 00000000000..f1ca0de7ee3
 +    COMPILE_FLAGS "${HAS_WARN_FLAG}")
 +ENDIF()
 diff --git a/storage/innobase/handler/ha_innodb.cc b/storage/innobase/handler/ha_innodb.cc
-index 9d8bb6fe225..c8e3406a270 100644
+index 31938a81d04..30959489a4a 100644
 --- a/storage/innobase/handler/ha_innodb.cc
 +++ b/storage/innobase/handler/ha_innodb.cc
-@@ -198,6 +198,11 @@ this program; if not, write to the Free Software Foundation, Inc.,
+@@ -205,6 +205,11 @@ this program; if not, write to the Free Software Foundation, Inc.,
  
  #ifdef HAVE_UNISTD_H
  #include <unistd.h>

@@ -1,7 +1,7 @@
-From a1e3cf45e2c7b6762e51534b31acf81497f83f7a Mon Sep 17 00:00:00 2001
+From 7de996453ae6a0d84984768fbfca02701992aed0 Mon Sep 17 00:00:00 2001
 From: Nehal J Wani <nehaljw.kkd1@gmail.com>
 Date: Sat, 18 Dec 2021 16:57:08 -0500
-Subject: [PATCH 18/19] Revert "Bug #30981914: COMPILE WITH FASTER TLS MODEL"
+Subject: [PATCH 18/18] Revert "Bug #30981914: COMPILE WITH FASTER TLS MODEL"
 
 xref: https://github.com/conda-forge/mysql-feedstock/issues/60
 xref: https://bugs.launchpad.net/ubuntu/+source/mysql-8.0/+bug/1889851
@@ -12,7 +12,7 @@ This reverts commit 735bd2a53834266c7256830c8d34672ea55fe17b.
  1 file changed, 6 deletions(-)
 
 diff --git a/cmake/build_configurations/compiler_options.cmake b/cmake/build_configurations/compiler_options.cmake
-index a30eafe16d9..fbe25d6d57b 100644
+index 5dd2499c51c..f60d2b67c7c 100644
 --- a/cmake/build_configurations/compiler_options.cmake
 +++ b/cmake/build_configurations/compiler_options.cmake
 @@ -64,12 +64,6 @@ IF(UNIX)

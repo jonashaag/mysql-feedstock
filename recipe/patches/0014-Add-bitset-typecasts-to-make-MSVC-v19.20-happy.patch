@@ -1,7 +1,7 @@
-From 83c1cac3ff983c8970248d813eddf57a3e726fa2 Mon Sep 17 00:00:00 2001
+From 863ead00f25cf5ab71c77e3c9e839542f0520887 Mon Sep 17 00:00:00 2001
 From: Nehal J Wani <nehaljw.kkd1@gmail.com>
 Date: Wed, 21 Jul 2021 09:53:47 +0530
-Subject: [PATCH 14/19] Add bitset typecasts to make MSVC<v19.20 happy
+Subject: [PATCH 14/18] Add bitset typecasts to make MSVC<v19.20 happy
 
 This patch resolves the following error with the MSVC compiler:
 
@@ -12,7 +12,7 @@ conversion from '...' to 'unsigned __int64' requires a narrowing conversion
  1 file changed, 5 insertions(+), 3 deletions(-)
 
 diff --git a/router/src/http/src/http_server_plugin.cc b/router/src/http/src/http_server_plugin.cc
-index fcacc198bd8..b459373a624 100644
+index 88ba976b064..89afccae532 100644
 --- a/router/src/http/src/http_server_plugin.cc
 +++ b/router/src/http/src/http_server_plugin.cc
 @@ -181,7 +181,7 @@ void HttpRequestThread::set_request_router(HttpRequestRouter &router) {
@@ -24,7 +24,7 @@ index fcacc198bd8..b459373a624 100644
                     HttpRequestThread::on_event_loop_ready, this, nullptr);
    event_base_.dispatch();
  
-@@ -302,7 +302,8 @@ class HttpsRequestMainThread : public HttpRequestMainThread {
+@@ -289,7 +289,8 @@ class HttpsRequestMainThread : public HttpRequestMainThread {
          [](EventBase *base, void *arg) {
            return EventBuffer(base, -1, static_cast<TlsServerContext *>(arg),
                               EventBuffer::SslState::Accepting,
@@ -34,7 +34,7 @@ index fcacc198bd8..b459373a624 100644
          },
          tls_ctx);
    }
-@@ -324,7 +325,8 @@ class HttpsRequestWorkerThread : public HttpRequestWorkerThread {
+@@ -311,7 +312,8 @@ class HttpsRequestWorkerThread : public HttpRequestWorkerThread {
          [](EventBase *base, void *arg) {
            return EventBuffer(base, -1, static_cast<TlsServerContext *>(arg),
                               EventBuffer::SslState::Accepting,

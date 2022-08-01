@@ -23,7 +23,6 @@ cmake -S%SRC_DIR% -Bbuild -GNinja ^
   -DLZ4_SYSTEM_LIBRARY=%lz4_lib% ^
   -DLIBEVENT_OPENSSL=%libevent_openssl_lib% ^
   -DWITH_ICU=system ^
-  -DWITH_EDITLINE=system ^
   -DWITH_PROTOBUF=system ^
   -DWITH_LIBEVENT=system ^
   -DWITH_BOOST=%SRC_DIR%\boost ^

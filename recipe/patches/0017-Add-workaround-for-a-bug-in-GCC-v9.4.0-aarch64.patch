@@ -1,7 +1,7 @@
-From 981b766c6f3cfc8e702e7673e1a68e03db07a01c Mon Sep 17 00:00:00 2001
+From 643c373501d206fdc206040dbc8e5283177a6c0a Mon Sep 17 00:00:00 2001
 From: Nehal J Wani <nehaljw.kkd1@gmail.com>
 Date: Sun, 24 Oct 2021 15:21:38 -0400
-Subject: [PATCH 17/19] Add workaround for a bug in GCC v9.4.0 (aarch64)
+Subject: [PATCH 17/18] Add workaround for a bug in GCC v9.4.0 (aarch64)
 
 xref: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=100985
 ---
@@ -10,7 +10,7 @@ xref: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=100985
  2 files changed, 12 insertions(+)
 
 diff --git a/include/my_checksum.h b/include/my_checksum.h
-index b9919d3679c..f2011ac5067 100644
+index d128493328e..1d0d21032b7 100644
 --- a/include/my_checksum.h
 +++ b/include/my_checksum.h
 @@ -41,6 +41,12 @@

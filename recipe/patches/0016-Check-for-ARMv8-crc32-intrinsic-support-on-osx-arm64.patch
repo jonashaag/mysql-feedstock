@@ -1,7 +1,7 @@
-From 4e7298ebef0f40d479fbcc6589b7665a6b2a3243 Mon Sep 17 00:00:00 2001
+From 2bfbae38828de554463d523d0a3848b1a7c56b86 Mon Sep 17 00:00:00 2001
 From: Nehal J Wani <nehaljw.kkd1@gmail.com>
 Date: Sun, 24 Oct 2021 14:20:06 -0400
-Subject: [PATCH 16/19] Check for ARMv8 crc32 intrinsic support on osx-arm64
+Subject: [PATCH 16/18] Check for ARMv8 crc32 intrinsic support on osx-arm64
  too
 
 ---
@@ -10,7 +10,7 @@ Subject: [PATCH 16/19] Check for ARMv8 crc32 intrinsic support on osx-arm64
  2 files changed, 14 insertions(+), 6 deletions(-)
 
 diff --git a/configure.cmake b/configure.cmake
-index 4c2b9c22771..60b5a207454 100644
+index fe520e9cac0..ff2d5838924 100644
 --- a/configure.cmake
 +++ b/configure.cmake
 @@ -712,8 +712,8 @@ IF(HAVE_LIBNUMA AND NOT WITH_NUMA)
@@ -25,7 +25,7 @@ index 4c2b9c22771..60b5a207454 100644
  
      IF (HAVE_ACLE_H)
 diff --git a/include/my_checksum.h b/include/my_checksum.h
-index 7888c01cac9..b9919d3679c 100644
+index 0cf14e9e49b..d128493328e 100644
 --- a/include/my_checksum.h
 +++ b/include/my_checksum.h
 @@ -41,31 +41,39 @@

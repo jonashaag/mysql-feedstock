@@ -14,11 +14,6 @@ lz4_c:
 - 1.9.3
 openssl:
 - 1.1.1
-pin_run_as_build:
-  libevent:
-    max_pin: x.x.x
-  zlib:
-    max_pin: x.x
 target_platform:
 - win-64
 zlib:

@@ -15,7 +15,7 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 icu:
-- '70'
+- '72'
 libevent:
 - 2.1.10
 libprotobuf:
@@ -23,7 +23,7 @@ libprotobuf:
 lz4_c:
 - 1.9.3
 openssl:
-- 1.1.1
+- '3'
 target_platform:
 - linux-aarch64
 zlib:

@@ -1,13 +1,78 @@
-About mysql-suite
-=================
-
-Home: 
-
-Package license: 
+About mysql-suite-feedstock
+===========================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mysql-feedstock/blob/main/LICENSE.txt)
 
+About mysql-suite
+-----------------
+
+Home: https://www.mysql.com/
+
+Package license: GPL-2.0-or-later
+
+Summary: Open source relational database management system.
+
+The MySQL(TM) software delivers a very fast, multi-threaded, multi-user,
+and robust SQL (Structured Query Language) database server. MySQL Server
+is intended for mission-critical, heavy-load production systems as well
+as for embedding into mass-deployed software.
+
+About mysql-common
+------------------
+
+
+
+Package license: 
+
 Summary: Common files for server and client libraries
+About mysql-router
+------------------
+
+
+
+Package license: 
+
+Summary: MySQL Router binaries
+About mysql-client
+------------------
+
+
+
+Package license: 
+
+Summary: MySQL client applications and tools
+About mysql-libs
+----------------
+
+
+
+Package license: 
+
+Summary: Shared libraries for MySQL database client applications
+About mysql-server
+------------------
+
+
+
+Package license: 
+
+Summary: Database server and related tools
+About mysql-devel
+-----------------
+
+
+
+Package license: 
+
+Summary: Development header files and libraries for MySQL database client applications
+About mysql
+-----------
+
+
+
+Package license: 
+
+Summary: Meta package for backwards compat + bonus content
 
 Current build status
 ====================
@@ -27,87 +92,45 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_openssl1.1.1</td>
+              <td>linux_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=659&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mysql-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mysql-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_openssl3</td>
+              <td>linux_aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=659&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mysql-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mysql-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_openssl1.1.1</td>
+              <td>linux_ppc64le</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=659&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mysql-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mysql-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_openssl3</td>
+              <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=659&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mysql-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mysql-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_openssl1.1.1</td>
+              <td>osx_arm64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=659&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mysql-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_openssl1.1.1" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mysql-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_openssl3</td>
+              <td>win_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=659&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mysql-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_openssl3" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_openssl1.1.1</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=659&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mysql-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_openssl1.1.1" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_openssl3</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=659&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mysql-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_openssl3" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_openssl1.1.1</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=659&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mysql-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_openssl1.1.1" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_openssl3</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=659&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mysql-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_openssl3" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_openssl1.1.1</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=659&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mysql-feedstock?branchName=main&jobName=win&configuration=win%20win_64_openssl1.1.1" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_openssl3</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=659&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mysql-feedstock?branchName=main&jobName=win&configuration=win%20win_64_openssl3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mysql-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
                 </a>
               </td>
             </tr>

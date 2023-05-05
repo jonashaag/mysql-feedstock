@@ -11,13 +11,13 @@ channel_targets:
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '11'
+- '12'
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 icu:
 - '72'
 libevent:
-- 2.1.10
+- 2.1.12
 libprotobuf:
 - '3.21'
 lz4_c:

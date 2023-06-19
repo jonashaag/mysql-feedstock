@@ -30,6 +30,8 @@ source:
     - patches/0020-Skip-code-not-compatible-with-libprotobuf-4.22.0.patch
     - patches/0021-Zlib-module-use-macro-instead-of-function.patch
     - patches/0022-Make-get_relative_path-binary-patching-friendly.patch
+    # Avoid crash on ppc64le, aarch64
+    - patches/0023-Revert-BUG-34849343-Aligned_atomic-not-working-as-in.patch
 
 build:
   number: 0

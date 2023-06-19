@@ -1,4 +1,4 @@
-{% set version = "8.0.32" %}
+{% set version = "8.0.33" %}
 
 package:
   name: mysql-suite
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-boost-{{ version }}.tar.gz
-  sha256: 1a83a2e1712a2d20b80369c45cecbfcc7be9178d4fc0e81ffba5c273ce947389
+  sha256: ae31e6368617776b43c82436c3736900067fada1289032f3ac3392f7380bcb58
   patches:
     - patches/0001-Make-installation-of-pdb-files-optional.patch
     - patches/0002-Fix-file-path-for-mysqlrouter.conf.sample-for-instal.patch
@@ -28,9 +28,14 @@ source:
     - patches/0018-Revert-Bug-30981914-COMPILE-WITH-FASTER-TLS-MODEL.patch
     - patches/0019-Use-config-mode-search-for-protobuf-first.patch
     - patches/0020-Skip-code-not-compatible-with-libprotobuf-4.22.0.patch
+    - patches/0021-Zlib-module-use-macro-instead-of-function.patch
+    - patches/0022-Make-get_relative_path-binary-patching-friendly.patch
+    # Avoid crash on ppc64le, aarch64
+    - patches/0023-Revert-BUG-34849343-Aligned_atomic-not-working-as-in.patch
+    - patches/0024-Make-libfido-checks-conditional.patch
 
 build:
-  number: 3
+  number: 0
 
 requirements:
   build:

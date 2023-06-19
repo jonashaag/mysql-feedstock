@@ -29,6 +29,7 @@ source:
     - patches/0019-Use-config-mode-search-for-protobuf-first.patch
     - patches/0020-Skip-code-not-compatible-with-libprotobuf-4.22.0.patch
     - patches/0021-Zlib-module-use-macro-instead-of-function.patch
+    - patches/0022-Make-get_relative_path-binary-patching-friendly.patch
 
 build:
   number: 0
